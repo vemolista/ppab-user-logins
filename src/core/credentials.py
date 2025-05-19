@@ -1,8 +1,9 @@
-def is_valid_credentials(user: tuple[str, str], hashed_password: str) -> bool:
+from src.core.data import User
+
+
+def is_valid_credentials(user: User | None, hashed_password: str) -> bool:
     if user is None:
         return False
 
-    _, actual_hashed_password = user
-
-    if hashed_password == actual_hashed_password:
+    if hashed_password == user.password_hash:
         return True
