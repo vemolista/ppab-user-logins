@@ -4,17 +4,26 @@ from hashlib import sha256
 from src.core.credentials import is_valid_credentials
 from src.shell.user_repo import get_user_by_username
 
-username = input("Username: ")
-password = input("Password: ")
+action = input("One (1) for sign up, (2) for login: ")
 
-hashed_pw = sha256(password.encode()).hexdigest()
+if action == 1:
+    username = input("Username: ")
+    password = input("Password: ")
 
-cx = sqlite3.connect("db/db.db")
-cur = cx.cursor()
+    hashed_pw = sha256(password.encode()).hexdigest()
 
-user = get_user_by_username(cur, username)
+    cx = sqlite3.connect("db/db.db")
+    cur = cx.cursor()
 
-if is_valid_credentials(user, hashed_pw):
-    print("secret")
-else:
-    print("get lost, fool!")
+    user = get_user_by_username(cur, username)
+
+    if is_valid_credentials(user, hashed_pw):
+        print("secret")
+    else:
+        print("get lost, fool!")
+
+elif action == 2:
+    raise NotImplementedError()
+
+elif action == 3:
+    raise ValueError()
