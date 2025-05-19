@@ -61,7 +61,7 @@ wheels = [
 ]
 
 [[package]]
-name = "ppab-game-of-life"
+name = "ppab-user-logins"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
