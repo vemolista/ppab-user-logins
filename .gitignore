@@ -1,0 +1,6 @@
+.pytest_cache
+
+.hypothesis/*
+!.hypothesis/examples
+
+__pycache__/
