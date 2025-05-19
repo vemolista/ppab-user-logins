@@ -6,6 +6,10 @@ echo "Downloading SQLite"
 sudo apt-get update
 sudo apt-get install sqlite3
 
+echo "Create DB"
+sqlite3 db/db.db < db/schema.sql
+sqlite3 db/db.db < db/seed.sql
+
 echo "Installing uv"
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
