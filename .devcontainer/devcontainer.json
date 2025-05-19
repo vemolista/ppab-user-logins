@@ -1,0 +1,23 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/base:noble",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {},
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.13",
+            "installTools": "false"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.debugpy",
+                "charliermarsh.ruff"
+            ]
+        }
+    },
+    "postCreateCommand": ".devcontainer/postCreateCommand.sh",
+    "remoteEnv": {
+        "UV_LINK_MODE": "copy"
+    }
+}
