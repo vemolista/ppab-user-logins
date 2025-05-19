@@ -4,11 +4,11 @@ users = {
 }
 
 
-def is_valid_credentials(username: str, password: str) -> bool:
-    actual_password = users.get(username, None)
+def is_valid_credentials(username: str, hashed_password: str) -> bool:
+    actual_hashed_password = users.get(username, None)
 
-    if actual_password is None:
+    if actual_hashed_password is None:
         return False
 
-    if password == actual_password:
+    if hashed_password == actual_hashed_password:
         return True
