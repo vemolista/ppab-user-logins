@@ -1,4 +1,4 @@
-import json
+import sqlite3
 from hashlib import sha256
 
 from src.core.credentials import is_valid_credentials
@@ -8,12 +8,15 @@ password = input("Password: ")
 
 hashed_pw = sha256(password.encode()).hexdigest()
 
-with open("config/credentials.json", "r") as f:
-    data = f.read()
+cx = sqlite3.connect("db/db.db")
+cur = cx.cursor()
 
-users = json.loads(data)
+user = cur.execute(
+    "select username, password_hash from users where username = (:username)",
+    ({"username": username}),
+).fetchone()
 
-if is_valid_credentials(users, username, hashed_pw):
+if is_valid_credentials(user, hashed_pw):
     print("secret")
 else:
     print("get lost, fool!")

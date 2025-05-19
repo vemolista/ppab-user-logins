@@ -1,8 +1,8 @@
-def is_valid_credentials(users: dict[str], username: str, hashed_password: str) -> bool:
-    actual_hashed_password = users.get(username, None)
-
-    if actual_hashed_password is None:
+def is_valid_credentials(user: tuple[str, str], hashed_password: str) -> bool:
+    if user is None:
         return False
+
+    _, actual_hashed_password = user
 
     if hashed_password == actual_hashed_password:
         return True
