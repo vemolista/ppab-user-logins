@@ -1,4 +1,4 @@
-users = {"hi": "ho"}
+users = {"hi": "ho", "john": "secure"}
 
 
 def is_valid_credentials(username: str, password: str) -> bool:
