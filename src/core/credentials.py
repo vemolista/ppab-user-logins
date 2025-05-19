@@ -1,10 +1,4 @@
-users = {
-    "hi": "a821c62e8104f8519d639b4c0948aece641b143f6601fa145993bb2e2c7299d4",
-    "john": "6a934b45144e3758911efa29ed68fb2d420fa7bd568739cdcda9251fa9609b1e",
-}
-
-
-def is_valid_credentials(username: str, hashed_password: str) -> bool:
+def is_valid_credentials(users: dict[str], username: str, hashed_password: str) -> bool:
     actual_hashed_password = users.get(username, None)
 
     if actual_hashed_password is None:
