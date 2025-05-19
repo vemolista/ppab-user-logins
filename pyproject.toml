@@ -1,7 +1,7 @@
 [project]
-name = "PPAB_Game_of_Life"
+name = "PPAB_User_Logins"
 version = "0.1.0"
-description = "Game of Life as guided by Robert Heaton's Programming Projects for Advanced Beginners"
+description = "User Logins as guided by Robert Heaton's Programming Projects for Advanced Beginners"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
