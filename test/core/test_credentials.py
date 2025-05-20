@@ -9,7 +9,7 @@ from src.core.credentials import is_valid_credentials
 from src.core.data import User
 
 
-@given(st.builds(User), st.characters())
+@given(st.builds(User), st.text())
 def test_is_valid_credentials_random(user: User, hashed_pw):
     if user.password_hash == hashed_pw:
         assert is_valid_credentials(user, hashed_pw)
