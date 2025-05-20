@@ -2,3 +2,5 @@
 !.hypothesis/examples
 
 __pycache__/
+
+db/db.db
